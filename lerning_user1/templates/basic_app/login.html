@@ -1,0 +1,36 @@
+{% extends 'basic_app/base.html' %}
+
+{% block block_base %}
+
+<div class="jambotron">
+    <h2 class="text-center text-uppercase">Please Login</h2>
+    <div class="box bg-dark w-25 mx-auto my-5 login-dilog rounded shadow">
+        <!-- <h4 class="text-light text text-center">logo</h4> -->
+        <div class="pt-4">
+            <img src="/media/basic_app/logo.png"  height="100" width="100" alt="" class="mx-auto d-block ">
+        </div>
+        <div class="pt-4 ">
+            <form method="POST" action="{% url 'basic_app:user_login' %}" class="">
+                {% csrf_token %}
+                <div class="mb-2 mx-4">
+                    <label class="form-lable" for="username"> Username</label>
+                    <input class="form-control" type="text" name="username" placeholder="Enter User name">
+                </div>
+                <div class="mb-3 mx-4">
+                    <label class="form-lable" for="password"> Password</label>
+                    <input class="form-control" type="password" name="password" placeholder="Enter User name">
+                </div>
+                <div class="mb-3 form-check mx-4">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                <div class="mb-3  mx-4">
+                    <input type="submit" value="sumbit" class="btn-primary btn">
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock block_base %}
